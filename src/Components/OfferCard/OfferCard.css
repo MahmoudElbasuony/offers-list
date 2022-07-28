@@ -1,0 +1,8 @@
+.offer-card {
+    width: 14rem;
+    min-height: 14rem;
+}
+
+.offer-card__image {
+    height: 8rem;
+}

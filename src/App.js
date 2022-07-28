@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Container, Row } from 'react-bootstrap';
 import './App.css';
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
+import OffersList from './Components/OffersList/OffersList';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Container>
+        <Row>
+          <Col xs="12">
+            <h1 className='text-center'>Offers</h1>
+            <ErrorBoundary errorMessageElement={<h4 className='text-danger text-center fw-bold'>Failed to load offers list.</h4>}>
+              <OffersList />
+            </ErrorBoundary>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
